@@ -1,0 +1,8 @@
+/Users/joeshepherd/Projects/ZenLeapApi/bin/Debug/netcoreapp1.1/ZenLeapApi.deps.json
+/Users/joeshepherd/Projects/ZenLeapApi/bin/Debug/netcoreapp1.1/ZenLeapApi.runtimeconfig.json
+/Users/joeshepherd/Projects/ZenLeapApi/bin/Debug/netcoreapp1.1/ZenLeapApi.runtimeconfig.dev.json
+/Users/joeshepherd/Projects/ZenLeapApi/obj/Debug/netcoreapp1.1/ZenLeapApi.AssemblyInfo.cs
+/Users/joeshepherd/Projects/ZenLeapApi/bin/Debug/netcoreapp1.1/ZenLeapApi.dll
+/Users/joeshepherd/Projects/ZenLeapApi/bin/Debug/netcoreapp1.1/ZenLeapApi.pdb
+/Users/joeshepherd/Projects/ZenLeapApi/obj/Debug/netcoreapp1.1/ZenLeapApi.dll
+/Users/joeshepherd/Projects/ZenLeapApi/obj/Debug/netcoreapp1.1/ZenLeapApi.pdb
