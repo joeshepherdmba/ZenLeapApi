@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using EF_Core_Generics.Repos;
 using Microsoft.EntityFrameworkCore;
+using ZenLeapApi.Data;
 
 namespace ZenLeapApi.Repositories
 {

@@ -7,12 +7,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace ZenLeapApi.Repositories
+namespace ZenLeapApi.Data
 {
     public class UnitOfWork :IDisposable
     {
         private DbContext _context = null;
-        private UserRepository _userRepository;
+        private GenericRepository<User> _userRepository;
         private GenericRepository<Project> _projectRepository;
         private GenericRepository<ProjectTask> _projectTaskRepository;
         private GenericRepository<Company> _companyRepository;
@@ -25,12 +25,12 @@ namespace ZenLeapApi.Repositories
 		/// <summary>
 		/// Get/Set Property for user repository.
 		/// </summary>
-		public UserRepository UserRepository
+		public GenericRepository<User> UserRepository
 		{
 			get
 			{
 				if (this._userRepository == null)
-					this._userRepository = new UserRepository(_context);
+					this._userRepository = new GenericRepository<User>(_context);
 				return _userRepository;
 			}
 		}

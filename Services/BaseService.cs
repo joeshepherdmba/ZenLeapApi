@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using ZenLeapApi.Repositories;
+using ZenLeapApi.Data;
 
 namespace ZenLeapApi.Services
 {

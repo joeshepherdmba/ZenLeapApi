@@ -4,7 +4,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="wwwroot\" />
-    <Folder Include="Repositories\" />
     <Folder Include="Data\" />
     <Folder Include="Services\" />
     <Folder Include="TransferObjects\" />
@@ -30,5 +29,7 @@
     <Compile Remove="EmptyClass.cs" />
     <Compile Remove="ViewModels\RegisterUserViewModel.cs" />
     <Compile Remove="Repositories\BaseRepository.cs" />
+    <Compile Remove="Repositories\IUserRepository.cs" />
+    <Compile Remove="Repositories\UserRepository.cs" />
   </ItemGroup>
 </Project>
