@@ -6,6 +6,8 @@
     <Folder Include="wwwroot\" />
     <Folder Include="Repositories\" />
     <Folder Include="Data\" />
+    <Folder Include="Services\" />
+    <Folder Include="TransferObjects\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
@@ -23,5 +25,10 @@
     <Reference Include="EF_Core_Generics">
       <HintPath>..\EF_Core_Generics\bin\Debug\netstandard1.4\EF_Core_Generics.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="EmptyClass.cs" />
+    <Compile Remove="ViewModels\RegisterUserViewModel.cs" />
+    <Compile Remove="Repositories\BaseRepository.cs" />
   </ItemGroup>
 </Project>
