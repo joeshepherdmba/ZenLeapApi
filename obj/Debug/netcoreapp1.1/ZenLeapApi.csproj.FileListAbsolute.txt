@@ -6,3 +6,6 @@
 /Users/joeshepherd/Projects/ZenLeapApi/bin/Debug/netcoreapp1.1/ZenLeapApi.pdb
 /Users/joeshepherd/Projects/ZenLeapApi/obj/Debug/netcoreapp1.1/ZenLeapApi.dll
 /Users/joeshepherd/Projects/ZenLeapApi/obj/Debug/netcoreapp1.1/ZenLeapApi.pdb
+/Users/joeshepherd/Projects/ZenLeapApi/obj/Debug/netcoreapp1.1/ZenLeapApi.csprojResolveAssemblyReference.cache
+/Users/joeshepherd/Projects/ZenLeapApi/bin/Debug/netcoreapp1.1/EF_Core_Generics.dll
+/Users/joeshepherd/Projects/ZenLeapApi/bin/Debug/netcoreapp1.1/EF_Core_Generics.pdb

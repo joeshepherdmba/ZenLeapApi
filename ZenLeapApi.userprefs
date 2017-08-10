@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{AC40A070-7201-45DC-98AC-E423E9FF8B23}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Models/ProjectTask.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Data/DataContext.cs">
     <Files>
       <File FileName="Repositories/UserRepository.cs" Line="13" Column="6" />
       <File FileName="Repositories/IUserRepository.cs" Line="13" Column="1" />
-      <File FileName="Models/User.cs" Line="11" Column="45" />
-      <File FileName="Models/ProjectTask.cs" Line="13" Column="7" />
-      <File FileName="Models/Company.cs" Line="18" Column="68" />
-      <File FileName="Models/Project.cs" Line="29" Column="39" />
+      <File FileName="Models/User.cs" Line="5" Column="2" />
+      <File FileName="Models/ProjectTask.cs" Line="11" Column="9" />
+      <File FileName="Models/Company.cs" Line="6" Column="1" />
+      <File FileName="Models/Project.cs" Line="13" Column="24" />
+      <File FileName="Data/DataContext.cs" Line="17" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

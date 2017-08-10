@@ -8,12 +8,11 @@ namespace ZenLeapApi.Models
 {
     public class Project
     {
+        [Key]
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
 
-        [ForeignKey("ProjectOwner")]
-        public int ProjectOwnerID { get; set; }
         public double ProjectValue { get; set; }
         public double VelocityFactor { get; set; }
         public double HealthFactor { get; set; }

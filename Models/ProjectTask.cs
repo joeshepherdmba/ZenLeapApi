@@ -8,6 +8,7 @@ namespace ZenLeapApi.Models
 {
     public class ProjectTask
     {
+        [Key]
         public int Id { get; set; }
         public string Title { get; set; }
        
@@ -30,12 +31,12 @@ namespace ZenLeapApi.Models
 		public int ProjectId { get; set; }
 
         [ForeignKey("ProjectId")]
-        public virtual Project Project { get; set; }
+        public Project Project { get; set; }
 
-		public int AssignedUserID { get; set; }
+        public int OwnerId { get; set; }
 
-        [ForeignKey("AssignedUserId")]
-        public virtual User AssignedToUser { get; set; }
+        [ForeignKey("OwnerId")]
+        public User Owner { get; set; }
         //public virtual ICollection<TimeEntry> TimeEntry { get; set; }
     }
 }
