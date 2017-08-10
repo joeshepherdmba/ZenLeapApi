@@ -4,6 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="wwwroot\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
@@ -11,5 +12,10 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="1.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EF_Core_Generics">
+      <HintPath>..\EF_Core_Generics\bin\Debug\netstandard1.4\EF_Core_Generics.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
