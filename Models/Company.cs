@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ZenLeapApi.Models
 {
@@ -8,9 +9,12 @@ namespace ZenLeapApi.Models
         public int Id { get; set; }
         public string CompanyName { get; set; }
         public DateTime DateEstablished { get; set; }
+
+        public int UserId { get; set; }
+
+        [ForeignKey("UserId")]
         public User Owner { get; set; }
 
         public virtual ICollection<Project> Projects { get; set; } 
-
     }    
 }

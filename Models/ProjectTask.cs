@@ -17,11 +17,25 @@ namespace ZenLeapApi.Models
         public DateTime StartDate { get; set; }
         public DateTime DueDate { get; set; }
         public DateTime EndDate { get; set; }
-        public int EstHours { get; set; }
-        public int AssignedToUserID { get; set; }
 
+		/* TODO: public static bool IsWorkingDay(this DateTime date)
+			    {
+			        return date.DayOfWeek != DayOfWeek.Saturday
+			            && date.DayOfWeek != DayOfWeek.Sunday;
+			    
+		        public int EstDays { get; }
+		        public int EstHours { get; }
+        }*/
+
+		public int ProjectId { get; set; }
+
+        [ForeignKey("ProjectId")]
         public virtual Project Project { get; set; }
-        public virtual User AssignedToUserId { get; set; }
+
+		public int AssignedUserID { get; set; }
+
+        [ForeignKey("AssignedUserId")]
+        public virtual User AssignedToUser { get; set; }
         //public virtual ICollection<TimeEntry> TimeEntry { get; set; }
     }
 }

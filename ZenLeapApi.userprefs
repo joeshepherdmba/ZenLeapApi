@@ -3,8 +3,10 @@
     <Files>
       <File FileName="Repositories/UserRepository.cs" Line="13" Column="6" />
       <File FileName="Repositories/IUserRepository.cs" Line="13" Column="1" />
-      <File FileName="Models/User.cs" Line="14" Column="67" />
-      <File FileName="Models/ProjectTask.cs" Line="1" Column="1" />
+      <File FileName="Models/User.cs" Line="11" Column="45" />
+      <File FileName="Models/ProjectTask.cs" Line="13" Column="7" />
+      <File FileName="Models/Company.cs" Line="18" Column="68" />
+      <File FileName="Models/Project.cs" Line="29" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

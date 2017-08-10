@@ -10,7 +10,7 @@ namespace ZenLeapApi.Models
         public string Email { get; set; }
         public string Password { get; set; }
 
-
-        public ICollection<ProjectTask> ProjectTasks { get; set; }
+        public virtual ICollection<Project> Projects { get; set; }
+        public virtual ICollection<ProjectTask> AssignedTasks { get; set; }
 	}
 }
