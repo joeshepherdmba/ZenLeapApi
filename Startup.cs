@@ -12,6 +12,7 @@ namespace ZenLeapApi
 {
     public class Startup
     {
+        //https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -28,6 +29,7 @@ namespace ZenLeapApi
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            //services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase());
             services.AddMvc();
         }
 
@@ -37,7 +39,19 @@ namespace ZenLeapApi
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseMvc();
+            //app.UseMvc();
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            });
+
+			//app.UseMvc(routes =>
+			//{
+			//	routes.MapRoute("blog", "blog/{*article}",
+			//			 defaults: new { controller = "Blog", action = "Article" });
+			//	routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+			//}
         }
     }
 }

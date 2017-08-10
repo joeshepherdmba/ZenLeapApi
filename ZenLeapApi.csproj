@@ -31,5 +31,6 @@
     <Compile Remove="Repositories\BaseRepository.cs" />
     <Compile Remove="Repositories\IUserRepository.cs" />
     <Compile Remove="Repositories\UserRepository.cs" />
+    <Compile Remove="Repositories\BaseRepository_OLD.cs" />
   </ItemGroup>
 </Project>
