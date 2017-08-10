@@ -1,22 +1,17 @@
 ﻿<Properties StartupConfiguration="{AC40A070-7201-45DC-98AC-E423E9FF8B23}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="appsettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/UsersController.cs">
     <Files>
-      <File FileName="Repositories/IUserRepository.cs" Line="8" Column="6" />
       <File FileName="Repositories/UserRepository.cs" Line="11" Column="48" />
-      <File FileName="Data/UnitOfWork.cs" Line="30" Column="7" />
-      <File FileName="Services/BaseService.cs" Line="5" Column="28" />
-      <File FileName="Services/IUserService.cs" Line="15" Column="54" />
-      <File FileName="Services/UserService.cs" Line="14" Column="10" />
-      <File FileName="Repositories/BaseRepository_OLD.cs" Line="28" Column="30" />
-      <File FileName="Program.cs" Line="1" Column="1" />
-      <File FileName="Startup.cs" Line="1" Column="1" />
-      <File FileName="Controllers/ValuesController.cs" Line="1" Column="1" />
-      <File FileName="appsettings.json" Line="1" Column="1" />
+      <File FileName="Data/UnitOfWork.cs" Line="24" Column="17" />
+      <File FileName="Controllers/UsersController.cs" Line="32" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/joeshepherd/Projects/ZenLeapApi/Controllers/UsersController.cs" relfile="Controllers/UsersController.cs" line="49" column="1" />
+      <Breakpoint file="/Users/joeshepherd/Projects/ZenLeapApi/Data/UnitOfWork.cs" relfile="Data/UnitOfWork.cs" line="25" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.ZenLeapApi PreferredExecutionTarget="MonoDevelop.Default" />

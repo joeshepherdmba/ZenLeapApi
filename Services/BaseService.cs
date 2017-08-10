@@ -12,7 +12,7 @@ namespace ZenLeapApi.Services
     {
         protected UnitOfWork _unitOfWork;
 
-        public BaseService(DbContext context)
+        public BaseService(DataContext context)
         {
             _unitOfWork = new UnitOfWork(context);
         }

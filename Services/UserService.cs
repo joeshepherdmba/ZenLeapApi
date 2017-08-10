@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using ZenLeapApi.Data;
 using ZenLeapApi.Models;
 using ZenLeapApi.TransferObjects;
 
@@ -9,7 +10,7 @@ namespace ZenLeapApi.Services
 {
     public class UserService : BaseService, IUserService
     {
-        public UserService(DbContext context)
+        public UserService(DataContext context)
         : base(context)
         {
         }

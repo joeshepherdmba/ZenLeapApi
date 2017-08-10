@@ -39,12 +39,25 @@ namespace ZenLeapApi
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            //app.UseMvc();
+            app.UseMvc();
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
-            });
+			//app.UseMvc(routes =>
+			//{
+			//	routes.MapRoute(name: "default",
+			//					template: "api/{controller=Default}/{action=Get}/{id?}");
+			//});
+
+			//app.UseMvc(routes =>
+			//{
+			//	routes.MapRoute(
+			//		name: "default",
+			//		template: "{controller=Account}/{action=Index}");
+
+			//});
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            //});
 
 			//app.UseMvc(routes =>
 			//{

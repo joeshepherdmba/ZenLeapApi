@@ -1,9 +1,6 @@
 ﻿using System;
-
-using Microsoft.EntityFrameworkCore;
 using ZenLeapApi.Models;
 using EF_Core_Generics.Repos;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
@@ -11,13 +8,13 @@ namespace ZenLeapApi.Data
 {
     public class UnitOfWork :IDisposable
     {
-        private DbContext _context = null;
-        private GenericRepository<User> _userRepository;
-        private GenericRepository<Project> _projectRepository;
-        private GenericRepository<ProjectTask> _projectTaskRepository;
-        private GenericRepository<Company> _companyRepository;
+        protected DataContext _context = null;
+        protected GenericRepository<User> _userRepository;
+        protected GenericRepository<Project> _projectRepository;
+        protected GenericRepository<ProjectTask> _projectTaskRepository;
+        protected GenericRepository<Company> _companyRepository;
 
-        public UnitOfWork(DbContext context)
+        public UnitOfWork(DataContext context)
         {
             this._context = context;
         }
@@ -29,8 +26,8 @@ namespace ZenLeapApi.Data
 		{
 			get
 			{
-				if (this._userRepository == null)
-					this._userRepository = new GenericRepository<User>(_context);
+				if (_userRepository == null)
+					_userRepository = new GenericRepository<User>(_context);
 				return _userRepository;
 			}
 		}
