@@ -14,7 +14,7 @@ namespace ZenLeapApi.Repositories
     /// <typeparam name="T"></typeparam>
     public interface IGenericRepository<T>
     {
-        void Insert(T entity);
+        void Add(T entity);
         void Delete(T entity);
         IQueryable<T> SearchFor(Expression<Func<T, bool>> predicate);
         IEnumerable<T> GetAll();

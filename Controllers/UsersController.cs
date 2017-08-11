@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using ZenLeapApi.Data;
+using Newtonsoft.Json;
 using ZenLeapApi.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -9,63 +9,66 @@ using ZenLeapApi.Models;
 namespace ZenLeapApi.Controllers
 {
     [Route("api/[controller]")]
-    public class UsersController :Controller
+    public class UsersController : BaseController
     {
-        protected UnitOfWork _unitOfWork;
-        protected DataContext _context;
+        //protected UnitOfWork _unitOfWork;
+        //protected DataContext _context;
 
-        public UsersController()
-            : base()
-        {
-            _context = new DataContext();
-            _unitOfWork = new UnitOfWork(_context);
-        }
+        //public UsersController()
+        //    : base()
+        //{
+        //    _context = new DataContext();
+        //    _unitOfWork = new UnitOfWork(_context);
+        //}
 
         // GET: api/users        
         [HttpGet]
         public IEnumerable<User> Get()
         {
-            //return new string[] { "value1", "value2" };
             return _unitOfWork.UserRepository.GetAll();
-            //var repo = _unitOfWork.UserRepository;
-
-            //List<User> users = new List<User>();
-            //users.Add(new User{
-            //    Email = "test@test.com"
-            //});
-
-            //return users;
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public User Get(int id)
+        public IActionResult Get(int id)
         {
-            //return _unitOfWork.UserRepository.GetById(id);
-            //return "value";
-            User user = new User()
+            var user = _unitOfWork.UserRepository.GetById(id);
+            if(user == null)
             {
-                Email = "test@test.com"
-            };
-            return user;
+                return NotFound();
+            }
+            return Ok(user);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult Post([FromBody]User value)
         {
+			if (value == null)
+			{
+				return BadRequest();
+			}
+
+            //User user = JsonConvert.DeserializeObject<User>(value);
+			_unitOfWork.UserRepository.Add(value);
+            _unitOfWork.UserRepository.SaveChanges();
+
+            return Ok();
+			//return CreatedAtRoute("GetBook", new { id = createdBook.Id }, createdBook);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public IActionResult Put(int id, [FromBody]User value)
         {
+			return Ok();
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+			return Ok();
         }
     }
 }

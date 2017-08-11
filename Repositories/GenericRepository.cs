@@ -20,9 +20,10 @@ namespace ZenLeapApi.Repositories
             DbSet = dataContext.Set<T>();
         }
 
-        public void Insert(T entity)
+        public void Add(T entity)
         {
             DbSet.Add(entity);
+            context.SaveChanges();
         }
 
         public void Delete(T entity)
