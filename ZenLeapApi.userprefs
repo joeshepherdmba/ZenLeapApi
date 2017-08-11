@@ -3,13 +3,28 @@
     <Files>
       <File FileName="Repositories/UserRepository.cs" Line="11" Column="48" />
       <File FileName="Data/UnitOfWork.cs" Line="24" Column="17" />
-      <File FileName="Controllers/UsersController.cs" Line="32" Column="10" />
+      <File FileName="Controllers/UsersController.cs" Line="21" Column="14" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ZenLeapApi" expanded="True">
+            <Node name="ZenLeapApi" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="UsersController.cs" selected="True" />
+              </Node>
+              <Node name="Data" expanded="True" />
+              <Node name="Repositories" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/joeshepherd/Projects/ZenLeapApi/Controllers/UsersController.cs" relfile="Controllers/UsersController.cs" line="49" column="1" />
       <Breakpoint file="/Users/joeshepherd/Projects/ZenLeapApi/Data/UnitOfWork.cs" relfile="Data/UnitOfWork.cs" line="25" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

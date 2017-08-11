@@ -26,13 +26,15 @@ namespace ZenLeapApi.Controllers
         public IEnumerable<User> Get()
         {
             //return new string[] { "value1", "value2" };
-            //return _unitOfWork.UserRepository.GetAll();
-            List<User> users = new List<User>();
-            users.Add(new User{
-                Email = "test@test.com"
-            });
+            return _unitOfWork.UserRepository.GetAll();
+            //var repo = _unitOfWork.UserRepository;
 
-            return users;
+            //List<User> users = new List<User>();
+            //users.Add(new User{
+            //    Email = "test@test.com"
+            //});
+
+            //return users;
         }
 
         // GET api/values/5

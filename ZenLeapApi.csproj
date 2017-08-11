@@ -7,6 +7,7 @@
     <Folder Include="Data\" />
     <Folder Include="Services\" />
     <Folder Include="TransferObjects\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
@@ -19,11 +20,6 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="1.1.1" />
 	<DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="EF_Core_Generics">
-      <HintPath>..\EF_Core_Generics\bin\Debug\netstandard1.4\EF_Core_Generics.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="EmptyClass.cs" />

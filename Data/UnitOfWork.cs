@@ -1,6 +1,6 @@
 ﻿using System;
 using ZenLeapApi.Models;
-using EF_Core_Generics.Repos;
+using ZenLeapApi.Repositories;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
