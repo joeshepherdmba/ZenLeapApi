@@ -1,38 +1,29 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using ZenLeapApi.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 // https://stormpath.com/blog/5-api-tips-dotnet-core Use this for Core
+// Filters: https://msdn.microsoft.com/en-us/magazine/mt767699.aspx
 
 namespace ZenLeapApi.Controllers
 {
     [Route("api/[controller]")]
     public class UsersController : BaseController
     {
-        //protected UnitOfWork _unitOfWork;
-        //protected DataContext _context;
-
-        //public UsersController()
-        //    : base()
-        //{
-        //    _context = new DataContext();
-        //    _unitOfWork = new UnitOfWork(_context);
-        //}
-
         // GET: api/users        
         [HttpGet]
-        public IEnumerable<User> Get()
+        public async Task<IEnumerable<User>> Get()
         {
-            return _unitOfWork.UserRepository.GetAll();
+            return await _unitOfWork.UserRepository.GetAllAsync();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            var user = _unitOfWork.UserRepository.GetById(id);
+            var user = await _unitOfWork.UserRepository.GetByIdAsync(id);
             if(user == null)
             {
                 return NotFound();
@@ -42,15 +33,14 @@ namespace ZenLeapApi.Controllers
 
         // POST api/values
         [HttpPost]
-        public IActionResult Post([FromBody]User value)
+        public async Task<IActionResult> Post([FromBody]User value)
         {
 			if (value == null)
 			{
 				return BadRequest();
 			}
 
-            //User user = JsonConvert.DeserializeObject<User>(value);
-			_unitOfWork.UserRepository.Add(value);
+			await _unitOfWork.UserRepository.AddAsync(value);
             _unitOfWork.UserRepository.SaveChanges();
 
             return Ok();
@@ -59,15 +49,31 @@ namespace ZenLeapApi.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]User value)
+        public async Task<IActionResult> Put(int id, [FromBody]User value)
         {
+            if(value == null){
+                return BadRequest();
+            }
+            var user = await _unitOfWork.UserRepository.GetByIdAsync(id);
+            user.FirstName = value.FirstName;
+            user.LastName = value.LastName;
+            user.Email = value.Email;
+            user.Projects = value.Projects;
+            user.AssignedTasks = value.AssignedTasks;
+            user.Password = value.Password;
+
+            _unitOfWork.UserRepository.Update(user);
+            _unitOfWork.UserRepository.SaveChanges();
 			return Ok();
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            var userToDelete = _unitOfWork.UserRepository.GetById(id);
+            _unitOfWork.UserRepository.Delete(userToDelete);
+            await _unitOfWork.UserRepository.SaveChangesAsync();
 			return Ok();
         }
     }

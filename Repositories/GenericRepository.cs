@@ -17,13 +17,12 @@ namespace ZenLeapApi.Repositories
         public GenericRepository(DataContext dataContext)
         {
             context = dataContext;
-            DbSet = dataContext.Set<T>();
+            DbSet = context.Set<T>();
         }
 
         public void Add(T entity)
         {
             DbSet.Add(entity);
-            context.SaveChanges();
         }
 
         public void Delete(T entity)
@@ -70,10 +69,15 @@ namespace ZenLeapApi.Repositories
                 .ForEach(x => x.Reload());
         }
 
-        // Async section
-        #region Async Methods
+		// Async section
+		#region Async Methods
 
-        public async Task<IEnumerable<T>> GetAllAsync()
+		public async Task AddAsync(T entity)
+		{
+			await DbSet.AddAsync(entity);
+		}
+
+		public async Task<IEnumerable<T>> GetAllAsync()
         {
             return await DbSet.ToListAsync();
         }
