@@ -56,7 +56,7 @@ namespace ZenLeapApi.Controllers
 				return BadRequest();
 			}
 			var task = await _unitOfWork.ProjectTaskRepository.GetByIdAsync(id);
-			task.Id = value.Id;
+
             task.Title = value.Title;
             task.Description = value.Description;
             task.Owner = value.Owner;

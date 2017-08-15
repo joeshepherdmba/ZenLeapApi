@@ -57,8 +57,8 @@ namespace ZenLeapApi.Controllers
 				return BadRequest();
 			}
 			var company = await _unitOfWork.CompanyRepository.GetByIdAsync(id);
-			company.CompanyName = value.CompanyName;
-            company.Id = value.Id;
+
+            company.CompanyName = value.CompanyName;
             company.DateEstablished = value.DateEstablished;
             company.Owner = value.Owner;
             company.OwnerId = value.OwnerId;
