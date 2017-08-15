@@ -25,11 +25,11 @@ namespace ZenLeapApi.Migrations
 
                     b.Property<DateTime>("DateEstablished");
 
-                    b.Property<int>("UserId");
+                    b.Property<int>("OwnerId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("OwnerId");
 
                     b.ToTable("Companies");
                 });
@@ -116,7 +116,7 @@ namespace ZenLeapApi.Migrations
                 {
                     b.HasOne("ZenLeapApi.Models.User", "Owner")
                         .WithMany()
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("OwnerId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

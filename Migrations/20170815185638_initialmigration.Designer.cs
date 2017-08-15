@@ -9,8 +9,8 @@ using ZenLeapApi.Models;
 namespace ZenLeapApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20170810024415_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20170815185638_initialmigration")]
+    partial class initialmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,11 +26,11 @@ namespace ZenLeapApi.Migrations
 
                     b.Property<DateTime>("DateEstablished");
 
-                    b.Property<int>("UserId");
+                    b.Property<int>("OwnerId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("OwnerId");
 
                     b.ToTable("Companies");
                 });
@@ -117,7 +117,7 @@ namespace ZenLeapApi.Migrations
                 {
                     b.HasOne("ZenLeapApi.Models.User", "Owner")
                         .WithMany()
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("OwnerId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

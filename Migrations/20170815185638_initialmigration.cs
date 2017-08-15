@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ZenLeapApi.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class initialmigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,14 +32,14 @@ namespace ZenLeapApi.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     CompanyName = table.Column<string>(nullable: true),
                     DateEstablished = table.Column<DateTime>(nullable: false),
-                    UserId = table.Column<int>(nullable: false)
+                    OwnerId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Companies", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Companies_Users_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Companies_Users_OwnerId",
+                        column: x => x.OwnerId,
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -110,9 +110,9 @@ namespace ZenLeapApi.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Companies_UserId",
+                name: "IX_Companies_OwnerId",
                 table: "Companies",
-                column: "UserId");
+                column: "OwnerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Projects_CompanyId",

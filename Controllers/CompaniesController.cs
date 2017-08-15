@@ -10,9 +10,9 @@ using ZenLeapApi.Models;
 namespace ZenLeapApi.Controllers
 {
     [Route("api/[controller]")]
-    public class CompanyController : BaseController
+    public class CompaniesController : BaseController
     {
-		// GET: api/users        
+		// GET: api/companies        
 		[HttpGet]
 		public async Task<IEnumerable<Company>> Get()
 		{
@@ -23,12 +23,12 @@ namespace ZenLeapApi.Controllers
 		[HttpGet("{id}")]
 		public async Task<IActionResult> Get(int id)
 		{
-			var user = await _unitOfWork.CompanyRepository.GetByIdAsync(id);
-			if (user == null)
+			var company = await _unitOfWork.CompanyRepository.GetByIdAsync(id);
+			if (company == null)
 			{
 				return NotFound();
 			}
-			return Ok(user);
+			return Ok(company);
 		}
 
 		// POST api/values
@@ -61,7 +61,7 @@ namespace ZenLeapApi.Controllers
             company.Id = value.Id;
             company.DateEstablished = value.DateEstablished;
             company.Owner = value.Owner;
-            company.UserId = value.UserId;
+            company.OwnerId = value.OwnerId;
             company.Projects = value.Projects;
 
 			_unitOfWork.CompanyRepository.Update(company);

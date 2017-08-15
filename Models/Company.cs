@@ -12,9 +12,9 @@ namespace ZenLeapApi.Models
         public string CompanyName { get; set; }
         public DateTime DateEstablished { get; set; }
 
-        public int UserId { get; set; }
+        public int OwnerId { get; set; }
 
-        [ForeignKey("UserId")]
+        [ForeignKey("OwnerId")]
         public virtual User Owner { get; set; }
 
         public virtual ICollection<Project> Projects { get; set; } 

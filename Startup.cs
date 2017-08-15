@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore;
 using Microsoft.Extensions.Logging;
+using ZenLeapApi.Data;
 
 namespace ZenLeapApi
 {
@@ -30,7 +31,7 @@ namespace ZenLeapApi
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            //services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase());
+            //services.AddDbContext<DataContext>(opt => opt.in.UseInMemoryDatabase());
             services.AddMvc();
 			//services.AddDbContextPool<DataContext>(
 			//  options => options.UseSqlServer(connectionString)
@@ -44,6 +45,8 @@ namespace ZenLeapApi
             loggerFactory.AddDebug();
 
             app.UseMvc();
+            DataContext context = new DataContext();
+            DbInitializer.Initialize(context);
 
 			//app.UseMvc(routes =>
 			//{

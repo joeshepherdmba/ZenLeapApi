@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ZenLeapApi.Filters;
@@ -13,8 +14,15 @@ namespace ZenLeapApi.Controllers
     [Route("api/[controller]")]
     public class UsersController : BaseController
     {
-        // GET: api/users        
-        [HttpGet]
+		// GET: api/users
+		// this maps to a get requests to:
+		// domain/api/users
+		// and domain/api/users?id=someid
+		// and domain/api/users?mail=somemail
+		// and domain/api/users?pw=somepw
+		// and domain/api/users?mail=somemail&pw=somepw
+		// and domain/api/users with any query string really
+		[HttpGet]
         public async Task<IEnumerable<User>> Get()
         {
             return await _unitOfWork.UserRepository.GetAllAsync();
@@ -22,7 +30,7 @@ namespace ZenLeapApi.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        [ValidateUserExists]
+        //[ValidateUserExists]
         public async Task<IActionResult> Get(int id)
         {
             var user = await _unitOfWork.UserRepository.GetByIdAsync(id);

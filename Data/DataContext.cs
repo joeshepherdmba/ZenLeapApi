@@ -8,6 +8,7 @@ namespace ZenLeapApi.Data
     {
         public DataContext()
         {
+            
         }
 
         public DbSet<User> Users{ get; set; }
