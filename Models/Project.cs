@@ -20,7 +20,7 @@ namespace ZenLeapApi.Models
 		public int ProjectOwnerId { get; set; }
 
         [ForeignKey("ProjectOwnerId")]
-        public User ProjectOwner { get; set; }
+        public virtual User ProjectOwner { get; set; }
 
         public int CompanyId { get; set; }
 		

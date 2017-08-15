@@ -15,7 +15,7 @@ namespace ZenLeapApi.Models
         public int UserId { get; set; }
 
         [ForeignKey("UserId")]
-        public User Owner { get; set; }
+        public virtual User Owner { get; set; }
 
         public virtual ICollection<Project> Projects { get; set; } 
     }    

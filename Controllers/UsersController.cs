@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ZenLeapApi.Filters;
 using ZenLeapApi.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -21,6 +22,7 @@ namespace ZenLeapApi.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
+        [ValidateUserExists]
         public async Task<IActionResult> Get(int id)
         {
             var user = await _unitOfWork.UserRepository.GetByIdAsync(id);
@@ -49,6 +51,7 @@ namespace ZenLeapApi.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
+		//[ValidateUserExists]
         public async Task<IActionResult> Put(int id, [FromBody]User value)
         {
             if(value == null){
@@ -64,11 +67,12 @@ namespace ZenLeapApi.Controllers
 
             _unitOfWork.UserRepository.Update(user);
             _unitOfWork.UserRepository.SaveChanges();
-			return Ok();
+			return Ok(user);
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
+		//[ValidateUserExists]
         public async Task<IActionResult> Delete(int id)
         {
             var userToDelete = _unitOfWork.UserRepository.GetById(id);

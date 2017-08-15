@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore;
 using Microsoft.Extensions.Logging;
 
 namespace ZenLeapApi
@@ -31,6 +32,9 @@ namespace ZenLeapApi
             // Add framework services.
             //services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase());
             services.AddMvc();
+			//services.AddDbContextPool<DataContext>(
+			//  options => options.UseSqlServer(connectionString)
+			//);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

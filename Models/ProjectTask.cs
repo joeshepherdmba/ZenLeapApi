@@ -31,12 +31,12 @@ namespace ZenLeapApi.Models
 		public int ProjectId { get; set; }
 
         [ForeignKey("ProjectId")]
-        public Project Project { get; set; }
+        public virtual Project Project { get; set; }
 
         public int OwnerId { get; set; }
 
         [ForeignKey("OwnerId")]
-        public User Owner { get; set; }
+        public virtual User Owner { get; set; }
         //public virtual ICollection<TimeEntry> TimeEntry { get; set; }
     }
 }
