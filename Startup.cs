@@ -6,12 +6,16 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore;
 using Microsoft.Extensions.Logging;
+using ZenLeapApi.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ZenLeapApi
 {
     public class Startup
     {
+        //https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -28,7 +32,14 @@ namespace ZenLeapApi
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddMvc();
+            //services.AddDbContext<DataContext>(opt => opt.in.UseInMemoryDatabase());
+
+            services.AddDbContext<DataContext>(x => x.UseInMemoryDatabase());
+			//services.AddTransient(<IBookRepository, InMemoryBookRepository>()); for dependency injection of UnitOfWork. I think this needs an interface
+			services.AddMvc();
+			//services.AddDbContextPool<DataContext>(
+			//  options => options.UseSqlServer(connectionString)
+			//);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,6 +49,33 @@ namespace ZenLeapApi
             loggerFactory.AddDebug();
 
             app.UseMvc();
+            //DataContext context = new DataContext();
+            //DbInitializer.Initialize(context);
+
+			//app.UseMvc(routes =>
+			//{
+			//	routes.MapRoute(name: "default",
+			//					template: "api/{controller=Default}/{action=Get}/{id?}");
+			//});
+
+			//app.UseMvc(routes =>
+			//{
+			//	routes.MapRoute(
+			//		name: "default",
+			//		template: "{controller=Account}/{action=Index}");
+
+			//});
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            //});
+
+			//app.UseMvc(routes =>
+			//{
+			//	routes.MapRoute("blog", "blog/{*article}",
+			//			 defaults: new { controller = "Blog", action = "Article" });
+			//	routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+			//}
         }
     }
 }
