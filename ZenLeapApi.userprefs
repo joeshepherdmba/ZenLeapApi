@@ -1,9 +1,15 @@
 ﻿<Properties StartupConfiguration="{AC40A070-7201-45DC-98AC-E423E9FF8B23}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Models/User.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
     <Files>
       <File FileName="Models/Project.cs" Line="25" Column="18" />
       <File FileName="Models/ProjectTask.cs" Line="14" Column="42" />
-      <File FileName="Models/User.cs" Line="10" Column="18" />
+      <File FileName="Models/User.cs" Line="16" Column="19" />
+      <File FileName="Controllers/BaseController.cs" Line="1" Column="1" />
+      <File FileName="appsettings.json" Line="1" Column="1" />
+      <File FileName="appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="Startup.cs" Line="1" Column="1" />
+      <File FileName="Data/DataContext.cs" Line="22" Column="63" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
