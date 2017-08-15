@@ -1,40 +1,14 @@
 ﻿<Properties StartupConfiguration="{AC40A070-7201-45DC-98AC-E423E9FF8B23}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/CompaniesController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/User.cs">
     <Files>
-      <File FileName="Data/UnitOfWork.cs" Line="9" Column="41" />
-      <File FileName="Controllers/UsersController.cs" Line="35" Column="10" />
-      <File FileName="Controllers/CompaniesController.cs" Line="61" Column="26" />
-      <File FileName="Controllers/ProjectController.cs" Line="86" Column="1" />
-      <File FileName="Controllers/TaskController.cs" Line="71" Column="13" />
-      <File FileName="Data/DataContext.cs" Line="14" Column="28" />
-      <File FileName="Startup.cs" Line="50" Column="13" />
-      <File FileName="Data/DbInitializer.cs" Line="9" Column="6" />
+      <File FileName="Models/Project.cs" Line="25" Column="18" />
+      <File FileName="Models/ProjectTask.cs" Line="14" Column="42" />
+      <File FileName="Models/User.cs" Line="10" Column="18" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="ZenLeapApi" expanded="True">
-            <Node name="ZenLeapApi" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True" />
-              <Node name="Filters" expanded="True" />
-              <Node name="Migrations" expanded="True" />
-              <Node name="Repositories" expanded="True">
-                <Node name="GenericRepository.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/joeshepherd/Projects/ZenLeapApi/Filters/ValidateUserExistsAttribute.cs" relfile="Filters/ValidateUserExistsAttribute.cs" line="27" column="1" />
-      <Breakpoint file="/Users/joeshepherd/Projects/ZenLeapApi/Filters/ValidateUserExistsAttribute.cs" relfile="Filters/ValidateUserExistsAttribute.cs" line="26" column="1" />
-      <Breakpoint file="/Users/joeshepherd/Projects/ZenLeapApi/Controllers/CompaniesController.cs" relfile="Controllers/CompaniesController.cs" line="67" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.ZenLeapApi PreferredExecutionTarget="MonoDevelop.Default" />

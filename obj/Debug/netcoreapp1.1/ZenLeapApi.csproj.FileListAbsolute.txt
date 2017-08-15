@@ -8,3 +8,4 @@
 /Users/joeshepherd/Projects/ZenLeapApi/obj/Debug/netcoreapp1.1/ZenLeapApi.pdb
 /Users/joeshepherd/Projects/ZenLeapApi/obj/Debug/netcoreapp1.1/ZenLeapApi.csprojResolveAssemblyReference.cache
 /Users/joeshepherd/Projects/ZenLeapApi/obj/Debug/netcoreapp1.1/ZenLeapApi.csproj.CoreCompileInputs.cache
+/Users/joeshepherd/Projects/ZenLeapApi/obj/Debug/netcoreapp1.1/ZenLeapApi.AssemblyInfoInputs.cache

@@ -10,8 +10,8 @@ namespace ZenLeapApi.Models
     {
         [Key]
         public int Id { get; set; }
-        public string Title { get; set; }
-       
+        [Required]
+        public string Title { get; set; }       
         public string Description { get; set; }
         public TaskStatus Status { get; set; }
         public Priority Priority { get; set; }
@@ -29,7 +29,7 @@ namespace ZenLeapApi.Models
         }*/
 
 		public int ProjectId { get; set; }
-
+        [Required]
         [ForeignKey("ProjectId")]
         public virtual Project Project { get; set; }
 

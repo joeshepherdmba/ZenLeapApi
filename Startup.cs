@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore;
 using Microsoft.Extensions.Logging;
 using ZenLeapApi.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ZenLeapApi
 {
@@ -32,7 +33,10 @@ namespace ZenLeapApi
         {
             // Add framework services.
             //services.AddDbContext<DataContext>(opt => opt.in.UseInMemoryDatabase());
-            services.AddMvc();
+
+            services.AddDbContext<DataContext>(x => x.UseInMemoryDatabase());
+			//services.AddTransient(<IBookRepository, InMemoryBookRepository>()); for dependency injection of UnitOfWork. I think this needs an interface
+			services.AddMvc();
 			//services.AddDbContextPool<DataContext>(
 			//  options => options.UseSqlServer(connectionString)
 			//);
@@ -45,8 +49,8 @@ namespace ZenLeapApi
             loggerFactory.AddDebug();
 
             app.UseMvc();
-            DataContext context = new DataContext();
-            DbInitializer.Initialize(context);
+            //DataContext context = new DataContext();
+            //DbInitializer.Initialize(context);
 
 			//app.UseMvc(routes =>
 			//{
